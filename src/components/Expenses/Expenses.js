@@ -7,12 +7,12 @@ import ExpensesChart from "./ExpensesChart";
 import Card from "../UI/Card";
 import "./Expenses.css";
 
-const Expenses = ({ items }) => {
+const Expenses = ({ items, expenses }) => {
   const [filteredYear, setFilteredYear] = useState("2020");
 
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
-    console.log(`Here is from Expenses ${selectedYear}`);
+    console.log(`Here are expenses from ${selectedYear}`);
   };
   const filteredExpenses = items.filter((expenses) => {
     return expenses.date.getFullYear().toString() === filteredYear;
